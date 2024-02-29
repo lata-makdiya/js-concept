@@ -441,7 +441,7 @@ class Demo {
 //     }
 // }
 
-// class Dog {
+// class Dog extends Animal{
 //     makesSound() {
 //         console.log('');
 //     }
@@ -452,7 +452,36 @@ class Demo {
 // const cat = new Cat();
 // const dog = new Dog();
 
+// const animal = new Animal();
+// const duck = new Duck();
+// const cat = new Cat();
+// const dog = new Dog();
+
 // animal.makesSound() // Quack Quack
 // duck.makesSound() // Quack Quack
-// cat.makesSoun.d() // meow meow
+// cat.makesSound() // meow meow
 // dog.makesSound() // meow meow
+ 
+// const arr = [
+//     {
+//       'name'     : 'Write for Envato Tuts+',
+//       'duration' : 120
+//     },
+//     {
+//       'name'     : 'Work out',
+//       'duration' : 60
+//     },
+//     {
+//       'name'     : 'Procrastinate on Duolingo',
+//       'duration' : 240
+//     }
+//   ];
+
+// let newArray = arr.filter((ele) => ele.duration != 60);
+// console.log(newArray);
+
+
+// nested inheritance 
+// reduce, filter method
+// rest, spread operators 
+// assign project 
