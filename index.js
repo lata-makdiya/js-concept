@@ -288,9 +288,171 @@ function myFunction(x, y = 5) {
     // y is 10 if not passed or undefined
     console.log(x + y);
 }
-myFunction(1)
+// myFunction(1)
 
 // https://huzaifaahmed.hashnode.dev/oop-in-js
 // https://codeburst.io/javascript-object-oriented-programming-using-es6-3cd2ac7fbbd8
 // https://www.scaler.com/topics/spread-and-rest-operator-in-javascript/
 // https://code.tutsplus.com/how-to-use-map-filter-reduce-in-javascript--cms-26209t
+
+// OOPS
+class Demo {
+
+}
+// class Meetup {
+//     constructor(name, location) {
+//         this.name = name;
+//         this.location = location;
+//     }
+//     start() {
+//         console.log(this.name + 'Meetup ' + 'is started by ' + this.name);
+//     }
+//     end() {
+//         console.log(this.name + 'Meetup ' + 'is ended at ' + this.location);
+//     }
+//     demoStaticMethod(){
+//         console.log('this is static method');
+//     } 
+// }
+
+// let jsMeetup = new Meetup('User 1', 'Surat');
+// console.log(jsMeetup instanceof Demo);
+// jsMeetup.start();
+// jsMeetup.end();
+// Meetup.demoStaticMethod();
+
+// Getter and setter
+// class NewMeetup {
+//     constructor(name) {
+//         this._name = name;
+//     }
+//     get name() {
+//         // Validation can happen on data
+//         return this._name;
+//     }
+//     set name(val) {
+//         // Validation can happen on data
+//         this._name = val;
+//     }
+// }
+
+// let meetup = new NewMeetup('JS');
+// console.log("meetup Name: " + meetup.name); // meetup Name: JS
+// meetup.name = 'React JS';
+// console.log("meetup Name: " + meetup.name); // meetup Name: Angular
+
+// Inheritance 
+// class Meetup {
+//     constructor() {
+//         console.log("inside Meetup constructor");
+//     }
+//     parentMethod(){
+//         console.log('This is parent method');
+//     }
+// }
+
+// class TechMeet extends Meetup {
+//     constructor() {
+//         super();  
+//         console.log("inside TechMeet constructor");
+//     }
+// }
+
+// let meetup = new Meetup();
+// let js = new TechMeet();
+// js.parentMethod();
+// inside Meetup constructor
+// inside TechMeet constructor
+
+// Abstraction
+// class User {
+//     constructor(name, email, age) {
+//       this._name = name;
+//       this._email = email;
+//       this._age = age;
+//       this._skills = [];
+//     }
+
+//     learnSkill(skill) {
+//       this._skills.push(skill);
+//     }
+
+//     isEligibleForVote() {
+//       return this._age >= 18;
+//     } 
+//   }
+
+//   const user = new User('Huzaifa', 'huzaifa@gmail.com', 17);
+
+//   user.learnSkill('react');
+//   user.learnSkill('javascript');
+//   user.learnSkill('Node JS');
+
+//   console.log(user._skills); // ['react', 'javascript']
+//   console.log(user.isEligibleForVote()); // true
+
+// Encapsulation
+// class User {
+//     constructor(name, email, age) {
+//       this._name = name;
+//       this._email = email;
+//       this._age = age;
+//     }
+
+//     get name() {
+//       return this._name;
+//     }
+
+//     set name(newName) {
+//       this._name = newName;
+//     }
+
+//     getDetails() {
+//       return `name is ${this._name} age is ${this._age}`;
+//     }
+//   }
+
+//   const user = new User('Huzaifa', 'huzaifa@gmail.com', 30);
+//   let getDetailsFunc = user.getDetails();
+
+//   console.log(getDetailsFunc);
+//   console.log(user.name); // Huzaifa
+
+//   user.name = 'User';
+
+//   console.log(user.name); // Ali
+
+// Polymorphism
+// class Animal {
+//     makesSound() {
+//         console.log('Animal makes sound');
+//     }
+// }
+
+// class Duck extends Animal {
+//     makesSound() {
+//         console.log('Quack Quack');
+//     }
+// }
+
+// class Cat extends Animal {
+//     makesSound() {
+//         console.log('meow meow');
+//     }
+// }
+
+// class Dog {
+//     makesSound() {
+//         console.log('');
+//     }
+// }
+
+// const animal = new Animal();
+// const duck = new Duck();
+// const cat = new Cat();
+// const dog = new Dog();
+
+// animal.makesSound() // Quack Quack
+// duck.makesSound() // Quack Quack
+// cat.makesSoun.d() // meow meow
+// dog.makesSound() // meow meow
