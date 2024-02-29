@@ -290,3 +290,7 @@ function myFunction(x, y = 5) {
 }
 myFunction(1)
 
+// https://huzaifaahmed.hashnode.dev/oop-in-js
+// https://codeburst.io/javascript-object-oriented-programming-using-es6-3cd2ac7fbbd8
+// https://www.scaler.com/topics/spread-and-rest-operator-in-javascript/
+// https://code.tutsplus.com/how-to-use-map-filter-reduce-in-javascript--cms-26209t
