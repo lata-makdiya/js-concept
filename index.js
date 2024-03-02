@@ -1,4 +1,13 @@
 "use strict"
+// import sum from "./helper.js"; // default import
+import {sum, Item, mobileModel} from "./helper.js"; 
+
+let itemObject = new Item();
+console.log(itemObject.showItem());
+console.log(sum(10, 1));
+console.log(mobileModel);
+
+
 window.addEventListener("load", function () {
     // console.log('Hello World');
 });
