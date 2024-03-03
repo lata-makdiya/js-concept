@@ -1,23 +1,32 @@
-// "use strict"
-window.addEventListener('load', function () {
+"use strict"
+// import sum from "./helper.js"; // default import
+import {sum, Item, mobileModel} from "./helper.js"; 
+
+let itemObject = new Item();
+console.log(itemObject.showItem());
+console.log(sum(10, 1));
+console.log(mobileModel);
+
+
+window.addEventListener("load", function () {
     // console.log('Hello World');
-})
+});
 
 function grettings() {
-    console.log('Good Morning');
+    console.log("Good Morning");
 }
 // grettings()
 
-let car = 'Volvo';
+let car = "Volvo";
 
 // Arrow Function
 let grettings1 = () => {
-    console.log('Good Afternoon');
-    car = 'Swift';
-}
+    console.log("Good Afternoon");
+    car = "Swift";
+};
 
 {
-    var mobile = 'Oppo';
+    var mobile = "Oppo";
 }
 
 // if(mobile == 'Oppo'){
@@ -30,28 +39,29 @@ let grettings1 = () => {
 // grettings1()
 
 function higherOrderFunction(func) {
-    console.log('This is higher order function');
+    console.log("This is higher order function");
     func;
 }
 
 // higherOrderFunction(grettings1())
 
 let fruitObject = {
-    name: 'Mango',
-    price: 100
-}
+    name: "Mango",
+    price: 100,
+};
 // console.log(fruitObject.name);
 
-let array = ['Mango', true, 10];
+let array = ["Mango", true, 10];
 // console.log(array[2]);
 
-let numbers = [1, 3, 4, 7, 9];
-let getFilteredNumbers = numbers.filter(filterNumber)
+// let mapNumbers = [1, 3, 4, 7, 9];
+// let getFilteredNumbers = mapNumbers.filter(filterNumber);
 
 // for prepared new array
-let mapArray = numbers.map((key) => {
-    return 'Text ' + key;
-});
+// let mapArray = mapNumbers.map((key) => {
+//     return key * 6  ;
+// });
+// console.log(mapArray);
 
 // console.log(mapArray);
 // for (let key in numbers) {
@@ -63,23 +73,21 @@ function filterNumber(num) {
 }
 // console.log(getFilteredNumbers);
 
-let findIndex = numbers.findIndex((obj) => {
-    return obj == 1
-})
+// let findIndex = numbers.findIndex((obj) => {
+//     return obj == 1;
+// });
 // console.log(findIndex);
 
 // console.log(typeof fruitObject);
 
-
 function getKeyByValue(object, value) {
-    return Object.keys(object).find(key =>
-        object[key] === value);
+    return Object.keys(object).find((key) => object[key] === value);
 }
 
 const exampleObject = {
-    key1: 'Geeks',
+    key1: "Geeks",
     key2: 100,
-    key3: 'Javascript'
+    key3: "Javascript",
 };
 
 // for (let key in exampleObject) {
@@ -94,7 +102,7 @@ const exampleObject = {
 //     console.log(element);
 // });
 
-let ans = getKeyByValue(exampleObject, 'Geeks');
+let ans = getKeyByValue(exampleObject, "Geeks");
 // console.log(ans);
 
 // let divId = document.getElementById('divId').innerHTML = '<h1>This is div Id</h1>';
@@ -106,9 +114,8 @@ let ans = getKeyByValue(exampleObject, 'Geeks');
 
 // document.getElementsByTagName('p')[0].innerHTML =  'this is p tag'
 
-
 // let divId = document.querySelector('#divId');
-let name = 'ABCD';
+let name = "ABCD";
 
 // switch (name) {
 //     case 'ABC':
@@ -131,31 +138,37 @@ let number = 1;
 // } while (number <= 5);
 
 let jsonData = {
-    "Class1": [{
-        "name": "User",
-        "age": "20",
-        "course": "web development",
-    }, {
-        "name": "User 1",
-        "age": "21",
-        "course": "web Designing",
-    }],
-    "Class2": [{
-        "name": "Person",
-        "age": "20",
-        "course": "web development",
-    }, {
-        "name": "Person 1",
-        "age": "21",
-        "course": "web Designing",
-        "hobbies": ["Reading", "Programming"]
-    }]
+    Class1: [
+        {
+            name: "User",
+            age: "20",
+            course: "web development",
+        },
+        {
+            name: "User 1",
+            age: "21",
+            course: "web Designing",
+        },
+    ],
+    Class2: [
+        {
+            name: "Person",
+            age: "20",
+            course: "web development",
+        },
+        {
+            name: "Person 1",
+            age: "21",
+            course: "web Designing",
+            hobbies: ["Reading", "Programming"],
+        },
+    ],
 };
 // console.log(jsonData.Class2[1].hobbies[0]);
 
 // let apiData = fetch('https://jsonplaceholder.typicode.com/todos')
 // .then(response => response.json())
-// .then(json => 
+// .then(json =>
 //         console.log(json)
 //     );
 
@@ -168,8 +181,8 @@ let jsonData = {
 // console.log(Math.ceil(5.4));
 // console.log(Math.floor(5.9));
 
-let input = document.getElementById('inputField');
-let textBox = document.getElementsByTagName('p')[0];
+let input = document.getElementById("inputField");
+let textBox = document.getElementsByTagName("p")[0];
 
 // input.addEventListener('input', function () {
 //     textBox.innerText = this.value;
@@ -217,10 +230,9 @@ let textBox = document.getElementsByTagName('p')[0];
 //     clearInterval(timeInterval)
 // })
 
-
-let form = document.getElementById('form');
-let userName = document.getElementById('name');
-let errorSection = document.getElementById('error');
+let form = document.getElementById("form");
+let userName = document.getElementById("name");
+let errorSection = document.getElementById("error");
 
 // form.addEventListener('submit', function (event) {
 //     event.preventDefault();
@@ -239,38 +251,38 @@ let errorSection = document.getElementById('error');
 
 async function getData() {
     let promise1 = new Promise((resolve, reject) => {
-        fetch('https://jsonplaceholder.typicode.com/todos')
-            .then(response => response.json())
-            .then(json => resolve(json));
+        fetch("https://jsonplaceholder.typicode.com/todos")
+            .then((response) => response.json())
+            .then((json) => resolve(json));
     });
     let promise2 = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve('code will run after 3 seconds')
+            resolve("code will run after 3 seconds");
             // console.log('code will run after 2 seconds');
         }, 3000);
     });
-    console.log('fetching data');
+    console.log("fetching data");
     let promise1Value = promise1;
-    console.log('fetched from promise 1');
+    console.log("fetched from promise 1");
     let promise2Value = await promise2;
-    console.log('fetched from promise 2');
+    console.log("fetched from promise 2");
 
     return [promise1Value, promise2Value];
 }
 
 // getData().then((value) => console.log(value));
 
-let demoArray = [1, 2, 'apple', 'car', true];
+let demoArray = [1, 2, "apple", "car", true];
 
-let divClass = document.getElementsByClassName('divClass')[0];
+let divClass = document.getElementsByClassName("divClass")[0];
 
-let id = 'idByVariable';
-divClass.innerHTML = 'This is Div'
-divClass.setAttribute('id', id)
-divClass.style.background = 'blue'
-divClass.style.color = 'white'
+let id = "idByVariable";
+divClass.innerHTML = "This is Div";
+divClass.setAttribute("id", id);
+divClass.style.background = "blue";
+divClass.style.color = "white";
 
-let string = 'this is demo string';
+let string = "this is demo string";
 
 // console.log(string.includes('is'));
 // console.log('start with  =>' +  string.startsWith('t'));
@@ -281,7 +293,7 @@ function reloadPage() {
 }
 
 let x = 5;
-x = 10
+x = 10;
 // console.log(x);
 
 function myFunction(x, y = 5) {
@@ -296,9 +308,7 @@ function myFunction(x, y = 5) {
 // https://code.tutsplus.com/how-to-use-map-filter-reduce-in-javascript--cms-26209t
 
 // OOPS
-class Demo {
-
-}
+class Demo { }
 // class Meetup {
 //     constructor(name, location) {
 //         this.name = name;
@@ -312,7 +322,7 @@ class Demo {
 //     }
 //     demoStaticMethod(){
 //         console.log('this is static method');
-//     } 
+//     }
 // }
 
 // let jsMeetup = new Meetup('User 1', 'Surat');
@@ -341,7 +351,7 @@ class Demo {
 // meetup.name = 'React JS';
 // console.log("meetup Name: " + meetup.name); // meetup Name: Angular
 
-// Inheritance 
+// Inheritance
 // class Meetup {
 //     constructor() {
 //         console.log("inside Meetup constructor");
@@ -353,7 +363,7 @@ class Demo {
 
 // class TechMeet extends Meetup {
 //     constructor() {
-//         super();  
+//         super();
 //         console.log("inside TechMeet constructor");
 //     }
 // }
@@ -379,7 +389,7 @@ class Demo {
 
 //     isEligibleForVote() {
 //       return this._age >= 18;
-//     } 
+//     }
 //   }
 
 //   const user = new User('Huzaifa', 'huzaifa@gmail.com', 17);
@@ -423,34 +433,29 @@ class Demo {
 //   console.log(user.name); // Ali
 
 // Polymorphism
-// class Animal {
-//     makesSound() {
-//         console.log('Animal makes sound');
-//     }
-// }
+class Animal {
+    makesSound() {
+        console.log('Animal makes sound');
+    }
+}
 
-// class Duck extends Animal {
-//     makesSound() {
-//         console.log('Quack Quack');
-//     }
-// }
+class Duck extends Animal {
+    // makesSound() {
+    //     console.log('Quack Quack');
+    // }
+}
 
-// class Cat extends Animal {
-//     makesSound() {
-//         console.log('meow meow');
-//     }
-// }
+class Cat extends Duck {
+    // makesSound() {
+    //     console.log('meow meow');
+    // }
+}
 
-// class Dog extends Animal{
-//     makesSound() {
-//         console.log('');
-//     }
-// }
-
-// const animal = new Animal();
-// const duck = new Duck();
-// const cat = new Cat();
-// const dog = new Dog();
+class Dog extends Animal{
+    makesSound() {
+        console.log('');
+    }
+}
 
 // const animal = new Animal();
 // const duck = new Duck();
@@ -461,7 +466,7 @@ class Demo {
 // duck.makesSound() // Quack Quack
 // cat.makesSound() // meow meow
 // dog.makesSound() // meow meow
- 
+
 // const arr = [
 //     {
 //       'name'     : 'Write for Envato Tuts+',
@@ -480,8 +485,66 @@ class Demo {
 // let newArray = arr.filter((ele) => ele.duration != 60);
 // console.log(newArray);
 
-
-// nested inheritance 
+// nested inheritance
 // reduce, filter method
-// rest, spread operators 
-// assign project 
+// rest, spread operators
+// assign project
+
+// Spread Operator
+// let pcItems = ['mouse', 'keyboard', 'monitor', 'cpu'];
+// let otherPcItems = ['printer', ...pcItems, 'webcam'];
+// console.log(otherPcItems);
+
+// Rest Operator
+// function pcItems(...items) {
+//     for (const item of items) {
+//         console.log(item);
+//     }
+// }
+// pcItems('mouse', 'keyboard');
+
+// Destructuring Array
+// let pcItems = ['mouse', 'keyboard', 'monitor', 'cpu', 'speaker'];
+// let [firstElement, secondElement, ...otherElements ] = pcItems;
+// console.log(otherElements);
+
+// Filter Method
+// let pcItemsObject = [
+//     {
+//         company: "HP",
+//         price: 20000,
+//     },
+//     {
+//         company: "Dell",
+//         price: 30000,
+//     }
+// ];
+// let pcItems = ["mouse", "keyboard", "monitor", "cpu", "speaker"];
+// let filteredValue = pcItemsObject.filter((key) => {
+//     return key.price == "30000";
+// });
+// // console.log(pcItems);
+// console.log(filteredValue);
+
+
+// Reduce Method
+// let numbers = [1, 2, 3, 4, 5];
+// let total = 0;
+      
+// numbers.forEach(function (number) {
+//     total += number;
+// });
+// console.log(total); // 15
+
+// let pcItems = ["mouse", "keyboard", "monitor", "cpu", "speaker"];
+// const total2 = pcItems.reduce(function (previous, current) {
+//     return previous + ', ' +current;
+// }, 'Power Supply');
+// console.log(total2); // 15
+
+/* 
+create a form
+add validation using try catch
+on submit from show form data into div
+create digital clock (you can add in navbar)
+*/
